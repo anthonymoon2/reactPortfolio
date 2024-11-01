@@ -33,6 +33,9 @@ function Portfolio() {
         <button className={isSkillSelected('UNITY') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('UNITY')}>UNITY</button>
         <button className={isSkillSelected('PYTHON') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('PYTHON')}>PYTHON</button>
         <button className={isSkillSelected('REACT') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('REACT')}>REACT</button>
+        <button className={isSkillSelected('TYPESCRIPT') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('TYPESCRIPT')}>TYPESCRIPT</button>
+        <button className={isSkillSelected('NODE.JS') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('NODE.JS')}>NODE.JS</button>
+        <button className={isSkillSelected('POSTGRESQL') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('POSTGRESQL')}>POSTGRESQL</button>
       </div>
 
       {filteredProjects.map((project) => (
@@ -41,13 +44,18 @@ function Portfolio() {
             <div className="project-container-left">
               {project.image.endsWith('.mp4') ? (
                 // render video if link ends with .mp4
-                <video autoPlay loop muted playsInline>
-                  <source src={project.image} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <div>
+                  <video autoPlay loop muted playsInline className="project-media">
+                    <source src={project.image} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
               ) : (
                 // render an image for other (png)
-                <img src={project.image} alt={project.title} className="project-images"/>
+                <div>
+                  <img src={project.image} alt={project.title} className="project-media"/>
+                </div>
               )}
             </div>
             <div className="project-container-right">
@@ -58,19 +66,19 @@ function Portfolio() {
                     <li key={pointIndex} dangerouslySetInnerHTML={{ __html: point }}></li>
                   ))}
                 </ul> 
-              </div>
-              <div className="project-buttons-container">
-                <a href={project.demoLink} target="_blank">
-                  <button className="project-button-demo" type="button">
-                    Live Demo
-                  </button>
-                </a>
-                <a href={project.sourceCodeLink} target="_blank">
-                  <button className="project-button-github" type="button">
-                    Source Code
-                    <img className="image-github" src="images/github.png"></img>
-                  </button>
-                </a>
+                <div className="project-buttons-container">
+                    <a href={project.demoLink} target="_blank">
+                      <button className="project-button-demo" type="button">
+                        Live Demo
+                      </button>
+                    </a>
+                    <a href={project.sourceCodeLink} target="_blank">
+                      <button className="project-button-github" type="button">
+                        Source Code
+                        <img className="image-github" src="images/github.png"></img>
+                      </button>
+                    </a>
+                  </div>
               </div>
             </div>
           </div>
@@ -95,6 +103,19 @@ class Project {
 
 // array of all projects
 const projects = [
+  new Project(
+    0,
+    'dishUp',
+    'images/dishUp.png',
+    'https://recipemaker-xwnr.onrender.com/',
+    'https://github.com/anthonymoon2/recipeMaker',
+    ['HTML', 'CSS', 'TYPESCRIPT', 'REACT', 'NODE.JS', 'EXPRESS.JS', 'POSTGRESQL'],
+    [
+      'Built a full-stack recipe discovery website with <span style="color:rgb(90, 177, 239);">TypeScript</span> and <span style="color:rgb(90, 177, 239);">Node.js</span>, integrating the <span style="color:rgb(90, 177, 239);">OpenAI API</span> to deliver personalized recipe suggestions based on available ingredients.', 
+      'Designed a dynamic, responsive UI in <span style="color:rgb(90, 177, 239);">React</span> with efficient data handling through <span style="color:rgb(90, 177, 239);">PostgreSQL</span> and <span style="color:rgb(90, 177, 239);">Sequelize</span> for streamlined ingredient and recipe management.', 
+      'Implemented <span style="color:rgb(90, 177, 239);">JWT</span>-based authentication for secure, personalized user sessions to save and access recipes across logins.'
+    ],
+  ),
   // -- PROJECT 1 -- 
   new Project(
     1,
