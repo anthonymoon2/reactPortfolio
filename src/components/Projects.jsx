@@ -108,8 +108,8 @@ const projects = [
     0,
     'trackBod (IOS App)',
     'images/trackBod.jpg',
-    'https://demo-link.com',
-    'https://github.com/anthonymoon2/Mario-Simulator',
+    'https://apps.apple.com/us/app/trackbod-ai-body-scan/id6740136071',
+    'https://github.com/anthonymoon2',
     ['Swift', 'NODE.JS', 'EXPRESS.JS', 'POSTGRESQL', 'AWS'],
     [
       'Designed, developed, and deployed an iOS fitness app in <span style="color:rgb(90, 177, 239)">SwiftUI</span>, achieving 10,000+ downloads in 2 months and generating $2,000+ MRR, while maintaining a 4.7-star App Store rating from 300+ global reviews.',
