@@ -12,7 +12,7 @@ function Home() {
       {/* Introduction Section */}
       <section>
         <p>
-          Hello! I’m a computer science graduate from Chapman University 
+        Hello! I’m a recent Computer Science graduate from Chapman University currently seeking full stack developer roles. I’m passionate about building clean, efficient, and user-focused full stack applications. With hands-on experience across both front-end and back-end technologies, I enjoy bringing ideas to life from concept to deployment. Check out my projects 👇!
         </p>
 
         {/* Buttons for projects and contact */}

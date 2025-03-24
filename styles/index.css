@@ -66,6 +66,8 @@ button{
 }
 .light-button{
   margin-left: 10px;
+  background-color: white;
+  color: black;
 }
 .dark-button:hover {
   background-color: rgb(116, 113, 113); 
