@@ -12,7 +12,7 @@ function Home() {
       {/* Introduction Section */}
       <section>
         <p>
-          Hello! I’m a computer science graduate and aspiring web developer from Chapman University who enjoys building user-friendly and creative websites, games, and everything in between.
+          Hello! I’m a computer science graduate from Chapman University 
         </p>
 
         {/* Buttons for projects and contact */}

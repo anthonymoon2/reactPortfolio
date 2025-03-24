@@ -26,9 +26,10 @@ function Resume() {
     <div>
       <h1>-RESUME-</h1>
 
-      <a href="resume.pdf" download="Anthony Moon's Master Resume" className="resume-container">
+      <a href="/resume/AnthonyMoonResume.pdf" download="Anthony Moon's Resume" className="resume-container">
         <button className="dark-button">Download</button>
       </a>
+
 
       <hr className="animated-hr"></hr>
 
@@ -100,6 +101,7 @@ function Resume() {
 
       <section className="extras-section">
         <ul>
+          <li>Chapman University IOS Development Club</li>
           <li>Chapman University Men's Soccer Team</li>
           <li>Chapman Korean American Student Association</li>
         </ul>

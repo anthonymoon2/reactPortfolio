@@ -179,6 +179,7 @@ main section{
   margin: 0% 7%;
   padding: 2%;
   transition: background-color .3s ease-out;
+  border-radius: 7px;
 }
 
 .project-container:hover{
@@ -222,7 +223,6 @@ main section{
 }
 .project-images{
   height: 280px;
-  transition: border-radius 0.3s, transform 0.3s;
   overflow: hidden;
 }
 .project-container-title{
@@ -287,6 +287,7 @@ main section{
   object-fit: cover;
   transition: border-radius 0.3s, transform 0.3s;
   overflow: hidden;
+  border-radius: 7px;
 }
 
 .project-section-title{
@@ -452,6 +453,7 @@ video {
   margin-right: 7%;
   padding: 10px;
   flex-wrap: wrap;
+  border-radius: 7px;
 }
 .button-selected, .button-unselected{
   transition: background-color 0.6s ease, color 0.6s ease, border-radius 0.6s ease;
@@ -575,11 +577,11 @@ video {
     font-size: 10px;
   }
   .blinking-name-text{
-    font-size: 40px;
+    font-size: 55px;
     margin-left: 20px;
   }
   main p{
-    font-size: 12px;
+    font-size: 20px;
   }
   main section{
     margin-left: 30px;

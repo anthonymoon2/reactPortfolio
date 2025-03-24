@@ -103,9 +103,22 @@ class Project {
 
 // array of all projects
 const projects = [
+  // -- PROJECT 5 -- 
   new Project(
     0,
-    'dishUp',
+    'trackBod (IOS App)',
+    'images/trackBod.jpg',
+    'https://demo-link.com',
+    'https://github.com/anthonymoon2/Mario-Simulator',
+    ['Swift', 'NODE.JS', 'EXPRESS.JS', 'POSTGRESQL', 'AWS'],
+    [
+      'Designed, developed, and deployed an iOS fitness app in <span style="color:rgb(90, 177, 239)">SwiftUI</span>, achieving 10,000+ downloads in 2 months and generating $2,000+ MRR, while maintaining a 4.7-star App Store rating from 300+ global reviews.',
+      'Engineered a scalable backend with <span style="color:rgb(90, 177, 239)">Node.js</span> & <span style="color:rgb(90, 177, 239)">Express</span>, deployed via AWS Elastic Beanstalk with S3-powered image and data storage, ensuring secure and efficient performance.'
+    ],    
+  ),
+  new Project(
+    1,
+    'dishUp (Full Stack Website)',
     'images/dishUp.png',
     'https://recipemaker-xwnr.onrender.com/',
     'https://github.com/anthonymoon2/recipeMaker',
@@ -116,24 +129,10 @@ const projects = [
       'Implemented <span style="color:rgb(90, 177, 239);">JWT</span>-based authentication for secure, personalized user sessions to save and access recipes across logins.'
     ],
   ),
-  // -- PROJECT 1 -- 
-  new Project(
-    1,
-    'CARD MATCHER',
-    'images/cardMatcherVid.mp4',
-    'https://anthonymoon2.github.io/cardMatcherGame/',
-    'https://github.com/anthonymoon2/cardMatcherGame',
-    ['JAVASCRIPT', 'HTML', 'CSS'],
-    [
-      'Developed a memorization card matching game using <span style="color:rgb(90, 177, 239);">JavaScript</span> which randomizes pairs of cards that the user has to match under a time limit.', 
-      'Implemented a leaderboard which stores the username and top three fastest scores using <span style="color:rgb(90, 177, 239)>local storage</span>. ', 
-      'Worked with a partner on code design and implementation and used <span style="color:rgb(90, 177, 239)>Git/GitHub</span> for source control.'
-    ],
-  ),
   // -- PROJECT 2 -- 
   new Project(
     2,
-    "CHE'LU ADVENTURES",
+    "CHE'LU ADVENTURES (Unity)",
     'images/gameVid.mp4',
     'https://anthonymoon2.itch.io/chelu-adventures?secret=6F5kR3BCobdP4qrhvB2cfW46d5I',
     'https://source-code-link.com',
@@ -146,7 +145,7 @@ const projects = [
   // -- PROJECT 3 -- 
   new Project(
     3,
-    'RUBRIK',
+    'RUBRIK (Flask)',
     'images/sbg.png',
     'http://172.233.137.123/',
     'https://github.com/anthonymoon2/sbg-website',
