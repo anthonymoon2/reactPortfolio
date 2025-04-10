@@ -1,5 +1,6 @@
 import React from 'react';
 
+// array of skills with name and corresponding image path
 const skills = [
   {name: 'HTML', image: '../images/html.webp'},
   {name: 'CSS', image: '../images/css.webp'},
@@ -21,6 +22,16 @@ const skills = [
   {name: 'Unity', image: '../images/unity.png'},
 ];
 
+/*
+Resume Component
+----------------
+includes: 
+- Resume PDF download button
+- Education info (University, majors/minors, coursework)
+- Technical skills (dynamically rendered from an array of skill objects)
+- Language proficiencies
+- Extracurricular involvement
+*/
 function Resume() {
   return (
     <div>
@@ -33,6 +44,7 @@ function Resume() {
 
       <hr className="animated-hr"></hr>
 
+      {/* Education section */}
       <section className="education-section">
         <div className="school-outer">
           <div className="school-inner" data-tilt>
@@ -50,6 +62,7 @@ function Resume() {
           </div>
         </div>
 
+        {/* Relevant courses */}
         <div className="education-classes">
           <h2>Relevant Coursework</h2>
           <ul>
@@ -85,9 +98,10 @@ function Resume() {
       </section>
 
       <hr className="animated-hr"></hr>
-
+      
+      {/* Language proficiencies */}
       <h1>-LANGUAGES-</h1>
-
+        
       <section className="languages-section">
         <ul>
           <li>English (native, fluent)</li>
@@ -96,7 +110,8 @@ function Resume() {
       </section>
 
       <hr className="animated-hr"></hr>
-
+      
+      {/* Extracurricular activities */}
       <h1>-EXTRACURRICULAR-</h1>
 
       <section className="extras-section">

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 // finds all projects and displays them
 function Portfolio() {
   const [skills, setSkills] = useState([]);
+
+  // helper function checks whether a particular skill is currently selected
   const isSkillSelected = (skill) => skills.includes(skill);
 
   // function to add skill
@@ -38,6 +40,7 @@ function Portfolio() {
         <button className={isSkillSelected('POSTGRESQL') ? 'button-selected' : 'button-unselected'} onClick={() => addSkill('POSTGRESQL')}>POSTGRESQL</button>
       </div>
 
+      {/* Projects */}
       {filteredProjects.map((project) => (
         <div className="second-container-row" key={project.id}>
           <div className="project-container">

@@ -66,8 +66,6 @@ button{
 }
 .light-button{
   margin-left: 10px;
-  background-color: white;
-  color: black;
 }
 .dark-button:hover {
   background-color: rgb(116, 113, 113); 
@@ -405,31 +403,6 @@ pre{
   font-size: 18px;
   margin:0;
 }
-
-@media (max-width: 900px) {
-  .skills-grid{
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 625px){
-  .text{
-    font-size: 55px;
-  }
-  .first-container-symbol{
-    font-size: 55px;
-    margin-right: 10px;
-  }
-
-  .skills-grid{
-    row-gap: 60px;
-  }
-  
-  .school-inner{
-    border-width: 1px;
-  }
-}
-
 /* remove underline from button */
 .navbar-button-container a, 
 .navbar-button-container a:visited, 
@@ -478,6 +451,31 @@ video {
   margin: 3%;
   font-size: 20px;
 }
+
+@media (max-width: 900px) {
+  .skills-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 625px){
+  .text{
+    font-size: 55px;
+  }
+  .first-container-symbol{
+    font-size: 55px;
+    margin-right: 10px;
+  }
+
+  .skills-grid{
+    row-gap: 60px;
+  }
+  
+  .school-inner{
+    border-width: 1px;
+  }
+}
+
 
 /* Tablet */
 @media screen and (max-width: 992px) {
