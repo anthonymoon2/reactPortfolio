@@ -542,12 +542,11 @@ video {
 /* Small smartphones */
 @media screen and (max-width: 576px) {
   .project-desc{
-    height: 250px;
+    height: auto;
   }
   .project-container{
-    height: 500px;
+    height: auto;
     padding: 5% 0% 0% 0%;
-    height: 580px;
   }
   .project-container-right{
     margin: 0px;
