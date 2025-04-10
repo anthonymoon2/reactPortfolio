@@ -116,7 +116,7 @@ function Resume() {
 
       <section className="extras-section">
         <ul>
-          <li>Chapman University IOS Development Club</li>
+          <li>Chapman University Computer Science Club</li>
           <li>Chapman University Men's Soccer Team</li>
           <li>Chapman Korean American Student Association</li>
         </ul>
