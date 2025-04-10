@@ -115,7 +115,7 @@ const projects = [
     'https://github.com/anthonymoon2',
     ['Swift', 'NODE.JS', 'EXPRESS.JS', 'POSTGRESQL', 'AWS'],
     [
-      'Designed, developed, and deployed an iOS fitness app in <span style="color:rgb(90, 177, 239)">SwiftUI</span>, achieving 10,000+ downloads in 2 months and generating $2,000+ MRR, while maintaining a 4.7-star App Store rating from 300+ global reviews.',
+      'Designed, developed, and deployed an iOS fitness app in <span style="color:rgb(90, 177, 239)">SwiftUI</span>, achieving 14,000+ downloads in under 3 months, generating $6,000+ in revenue, while maintaining a 4.7-star App Store rating from 500+ (global) reviews.',
       'Engineered a scalable backend with <span style="color:rgb(90, 177, 239)">Node.js</span> & <span style="color:rgb(90, 177, 239)">Express</span>, deployed via AWS Elastic Beanstalk with S3-powered image and data storage, ensuring secure and efficient performance.'
     ],    
   ),
