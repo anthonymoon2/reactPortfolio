@@ -46,7 +46,7 @@ nav{
   font-family: "Outfit", sans-serif;
   align-items: center;
 }
-.nav-right{
+.nav-right{ 
   font-size: 15px;
   display: flex;
   gap: 20px;
