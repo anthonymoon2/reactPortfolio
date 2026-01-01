@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/Home.css';
 
 function Home() {
   return (
@@ -12,7 +13,7 @@ function Home() {
       {/* Introduction Section */}
       <section>
         <p>
-        Hello! I’m a recent Computer Science graduate from Chapman University currently seeking full stack developer roles. I’m passionate about building clean, efficient, and user-focused full stack applications. With hands-on experience across both front-end and back-end technologies, I enjoy bringing ideas to life from concept to deployment. Check out my projects 👇!
+        Hello! I'm currently a full stack developer at Inbody with a passion for building clean, efficient, and user-focused full stack applications. Check out my projects 👇!
         </p>
 
         {/* Buttons for projects and contact */}
@@ -28,3 +29,4 @@ function Home() {
 }
 
 export default Home;
+

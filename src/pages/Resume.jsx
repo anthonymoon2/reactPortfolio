@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/Resume.css';
 
 // array of skills with name and corresponding image path
 const skills = [
@@ -126,3 +127,4 @@ function Resume() {
 }
 
 export default Resume;
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/Contact.css';
 
 function Contact() {
   return (
@@ -54,3 +55,4 @@ function updateClock() {
 setInterval(updateClock, 1000);
 window.onload = updateClock;
 export default Contact;
+

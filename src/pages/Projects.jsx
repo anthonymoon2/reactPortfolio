@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import '../../styles/Projects.css';
 
 // finds all projects and displays them
 function Portfolio() {
@@ -189,3 +190,4 @@ const projects = [
 ]
 
 export default Portfolio;
+

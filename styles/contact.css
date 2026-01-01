@@ -1,3 +1,5 @@
+/* ----- CONTACT PAGE CSS ----- */
+
 .name-button{
   background-color: transparent;
   border-style: none;
@@ -101,6 +103,7 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+/* Responsive styles for Contact */
 @media (max-width: 800px) {
   .contact-container{
     grid-template-columns: 1fr;
