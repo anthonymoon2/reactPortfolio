@@ -1,192 +1,180 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // finds all projects and displays them
 function Portfolio() {
-  const [skills, setSkills] = useState([]);
-
-  const isSkillSelected = (skill) => skills.includes(skill);
-
-  function addSkill(skill) {
-    if (!skills.includes(skill)) {
-      // add skill
-      setSkills((prevSkills) => [...prevSkills, skill]);
-      console.log(`${skill} added successfully!`);
-    } else {
-      // remove skill
-      setSkills((prevSkills) => prevSkills.filter((s) => s !== skill));
-    }
-  }
-
-  const filteredProjects =
-    skills.length === 0
-      ? projects
-      : projects.filter((project) =>
-          project.skillsArray.some((skill) => skills.includes(skill))
-        );
-
-  const skillButtonClass = (selected) =>
-    [
-      'transition-[background-color,color,border-radius] duration-[600ms] border-0 mr-[5px] rounded-[20px]',
-      selected
-        ? 'bg-white text-black px-[10px] py-[5px]'
-        : 'text-white bg-transparent p-[5px] hover:bg-[#8e8d8d] transition-colors duration-[400ms]',
-    ].join(' ');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <div className='max-w-[900px] mx-auto w-full px-4'>
-      <h1>Featured Works</h1>
+    <div className='max-w-[600px] mx-auto w-full px-4'>
+      <h2 className='text-[16px] font-medium mb-3 dark:text-white'>
+        Personal projects
+      </h2>
 
-      <div className='bg-[#2c2b2b] flex flex-wrap rounded-[7px] p-[10px] mb-[30px]'>
-        <button
-          className={skillButtonClass(isSkillSelected('HTML'))}
-          onClick={() => addSkill('HTML')}
-        >
-          HTML
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('CSS'))}
-          onClick={() => addSkill('CSS')}
-        >
-          CSS
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('JAVASCRIPT'))}
-          onClick={() => addSkill('JAVASCRIPT')}
-        >
-          JAVASCRIPT
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('C++'))}
-          onClick={() => addSkill('C++')}
-        >
-          C++
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('FLASK'))}
-          onClick={() => addSkill('FLASK')}
-        >
-          FLASK
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('UNITY'))}
-          onClick={() => addSkill('UNITY')}
-        >
-          UNITY
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('PYTHON'))}
-          onClick={() => addSkill('PYTHON')}
-        >
-          PYTHON
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('REACT'))}
-          onClick={() => addSkill('REACT')}
-        >
-          REACT
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('TYPESCRIPT'))}
-          onClick={() => addSkill('TYPESCRIPT')}
-        >
-          TYPESCRIPT
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('NODE.JS'))}
-          onClick={() => addSkill('NODE.JS')}
-        >
-          NODE.JS
-        </button>
-        <button
-          className={skillButtonClass(isSkillSelected('POSTGRESQL'))}
-          onClick={() => addSkill('POSTGRESQL')}
-        >
-          POSTGRESQL
-        </button>
-      </div>
-
-      {/* Projects */}
-      {filteredProjects.map((project) => (
-        <div className='flex justify-center mb-[50px]' key={project.id}>
-          <div className='bg-[#2c2b2b] h-[400px] flex w-full p-[2%] rounded-[7px] transition-colors duration-300 hover:bg-[#363636] max-[992px]:h-[600px] max-[992px]:flex-col max-[992px]:items-center max-[768px]:h-[500px] max-[576px]:h-auto max-[576px]:p-[5%_0%_0%_0%]'>
-            <div className='w-[45%] flex justify-center items-center max-[992px]:w-[90%] box-border'>
+      <div className='grid grid-cols-2 gap-6 max-[768px]:grid-cols-1'>
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            className='bg-white border border-gray-300 overflow-hidden transition-shadow duration-700 hover:shadow-[-15px_15px_25px_-5px_rgba(0,0,0,0.4)] flex flex-col cursor-pointer h-[170px]'
+            onClick={() => setSelectedProject(project)}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{
+              duration: 0.7,
+              ease: 'easeInOut',
+            }}
+          >
+            {/* Image/Video */}
+            <div className='w-full h-full overflow-hidden bg-gray-100'>
               {project.image.endsWith('.mp4') ? (
-                // render video if link ends with .mp4
-                <div>
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className='w-full h-[280px] object-cover overflow-hidden rounded-[7px] transition-[border-radius,transform] duration-300 max-[576px]:h-[220px]'
-                  >
-                    <source src={project.image} type='video/mp4' />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className='w-full h-full object-cover'
+                >
+                  <source src={project.image} type='video/mp4' />
+                  Your browser does not support the video tag.
+                </video>
               ) : (
-                // render an image for other (png)
-                <div>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className='w-full h-[280px] object-cover overflow-hidden rounded-[7px] transition-[border-radius,transform] duration-300 max-[576px]:h-[220px]'
-                  />
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className='w-full h-full object-cover'
+                />
               )}
             </div>
-            <div className='w-[50%] p-[20px] ml-[40px] max-[992px]:w-[90%] box-border max-[992px]:ml-0 max-[576px]:ml-0'>
-              <div className='pt-[30px] text-center text-[32px] text-white max-[992px]:pt-0'>
-                {project.title}
-              </div>
-              <div className='text-[17px] text-[#D9D9D9] h-[200px] font-extralight max-[768px]:h-[170px] max-[768px]:text-[15px] max-[576px]:h-auto'>
-                <ul className='m-0 p-0 list-none'>
-                  {project.bulletPointsArray.map((point, pointIndex) => (
-                    <li
-                      key={pointIndex}
-                      dangerouslySetInnerHTML={{ __html: point }}
-                    ></li>
-                  ))}
-                </ul>
-                <div className='flex max-[992px]:justify-center'>
-                  <a
-                    className='no-underline'
-                    href={project.demoLink}
-                    target='_blank'
-                    rel='noreferrer'
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Modal - App Store Style */}
+      <AnimatePresence>
+        {selectedProject && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className='fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+            >
+              {/* Modal Content */}
+              <motion.div
+                className='bg-white rounded-[20px] max-w-[600px] w-full max-h-[90vh] overflow-y-auto relative'
+                style={{
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                }}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{
+                  type: 'spring',
+                  damping: 25,
+                  stiffness: 300,
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <style>{`
+                  .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+                <div className='hide-scrollbar'>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className='absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors z-10'
                   >
-                    <button
-                      className='h-[40px] flex items-center justify-center font-bold text-[15px] mr-[20px] bg-none text-[#E6E6E6] cursor-pointer border-[3px] border-solid border-[#E6E6E6] p-[10px] transition-[border-color,color] duration-300 hover:border-[rgb(90,177,239)] hover:text-[rgb(90,177,239)] max-[576px]:text-[10px]'
-                      type='button'
-                    >
-                      Live Demo
-                    </button>
-                  </a>
-                  <a
-                    className='no-underline'
-                    href={project.sourceCodeLink}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <button
-                      className='h-[40px] flex items-center justify-center font-bold text-[15px] mr-[20px] bg-none text-[#E6E6E6] cursor-pointer border-0 transition-transform duration-200 hover:scale-[1.1] max-[576px]:text-[10px]'
-                      type='button'
-                    >
-                      Source Code
+                    ✕
+                  </button>
+
+                  {/* Modal Image/Video */}
+                  <div className='w-full h-[400px] overflow-hidden bg-gray-100'>
+                    {selectedProject.image.endsWith('.mp4') ? (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className='w-full h-full object-cover'
+                      >
+                        <source src={selectedProject.image} type='video/mp4' />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
                       <img
-                        className='h-[20px] ml-[10px]'
-                        src='images/github.png'
-                        alt='GitHub'
-                      ></img>
-                    </button>
-                  </a>
+                        src={selectedProject.image}
+                        alt={selectedProject.title}
+                        className='w-full h-full object-cover'
+                      />
+                    )}
+                  </div>
+
+                  {/* Modal Details */}
+                  <div className='p-6'>
+                    <h3 className='text-black text-[24px] font-bold mb-2'>
+                      {selectedProject.title}
+                    </h3>
+                    <div className='text-gray-600 text-[16px] mb-4'>
+                      <ul className='list-disc list-inside'>
+                        {selectedProject.bulletPointsArray.map(
+                          (point, pointIndex) => (
+                            <li
+                              key={pointIndex}
+                              dangerouslySetInnerHTML={{ __html: point }}
+                            ></li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                    <div className='flex gap-3 mt-4'>
+                      <a
+                        href={selectedProject.demoLink}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='no-underline'
+                      >
+                        <motion.button
+                          whileHover={{ scale: 1.02, opacity: 0.9 }}
+                          whileTap={{ scale: 0.98 }}
+                          transition={{ duration: 0.2 }}
+                          className='bg-black text-white px-5 py-2.5 rounded-sm font-medium text-sm hover:bg-gray-800 transition-colors cursor-pointer'
+                        >
+                          Live Demo
+                        </motion.button>
+                      </a>
+                      <a
+                        href={selectedProject.sourceCodeLink}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='no-underline'
+                      >
+                        <motion.button
+                          whileHover={{ scale: 1.02, opacity: 0.9 }}
+                          whileTap={{ scale: 0.98 }}
+                          transition={{ duration: 0.2 }}
+                          className='bg-transparent border border-gray-300 text-gray-700 px-5 py-2.5 rounded-sm font-medium text-sm hover:border-gray-400 hover:text-gray-900 transition-colors flex items-center justify-center cursor-pointer'
+                        >
+                          <span>Source Code</span>
+                          <img
+                            className='h-[16px] ml-2'
+                            src='images/github.png'
+                            alt='GitHub'
+                          />
+                        </motion.button>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

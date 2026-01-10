@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className='bg-[#212121]'>
-      <div className='max-w-[900px] mx-auto w-full px-4'>
+      <div className='max-w-[600px] mx-auto w-full px-4'>
         <section className='pt-[3%] pb-0 flex justify-center gap-5'>
           <a
             className='group text-white no-underline flex items-center'

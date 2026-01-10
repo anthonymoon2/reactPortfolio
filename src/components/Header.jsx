@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <header>
-      <nav className="flex justify-between items-center pt-[3%] text-[25px] font-['Outfit',sans-serif] max-w-[900px] mx-auto w-full px-4">
+      <nav className="flex justify-between items-center pt-[3%] text-[25px] font-['Outfit',sans-serif] max-w-[600px] mx-auto w-full px-4">
         <a href='#about' className={linkBase}>
           {' '}
           AM{' '}

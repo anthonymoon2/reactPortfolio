@@ -18,10 +18,10 @@ function Contact() {
   }, []);
 
   return (
-    <div className='max-w-[900px] mx-auto w-full px-4'>
-      <h1>-CONTACT ME-</h1>
+    <div className='max-w-[600px] mx-auto w-full px-4'>
+      <h2 className='text-[16px] font-medium mb-3 dark:text-white'>Contact</h2>
 
-      <div className='h-[700px] grid grid-cols-2 max-[800px]:grid-cols-1'>
+      <div className='h-[300px] grid grid-cols-2 max-[800px]:grid-cols-1'>
         <div className='p-[30px] text-center'>
           <form action='https://api.web3forms.com/submit' method='POST'>
             <input
