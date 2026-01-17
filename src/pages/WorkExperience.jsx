@@ -16,16 +16,13 @@ function WorkExperience() {
 
   return (
     <div className='max-w-[600px] mx-auto w-full px-4'>
-      <h2 className='text-[16px] font-medium mb-3 dark:text-white'>
-        Work Experience
+      <h2 className='text-base font-normal mb-4 dark:text-white'>
+        Work
       </h2>
       <div className='space-y-4'>
         <motion.div
-          className='flex gap-3 justify-between items-start cursor-pointer'
+          className='flex gap-3 justify-between items-start cursor-pointer hover:opacity-70 transition-opacity'
           onClick={() => setSelectedWork(inBodyWork)}
-          whileHover={{ opacity: 0.7 }}
-          whileTap={{ scale: 0.98 }}
-          transition={{ duration: 0.2 }}
         >
           <div className='flex gap-3'>
             <img

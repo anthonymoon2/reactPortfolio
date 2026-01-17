@@ -7,22 +7,16 @@ function Portfolio() {
 
   return (
     <div className='max-w-[600px] mx-auto w-full px-4'>
-      <h2 className='text-[16px] font-medium mb-3 dark:text-white'>
-        Personal projects
+      <h2 className='text-base font-normal mb-4 dark:text-white'>
+        Projects
       </h2>
 
       <div className='grid grid-cols-2 gap-6 max-[768px]:grid-cols-1'>
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className='bg-white border border-gray-300 overflow-hidden transition-shadow duration-700 hover:shadow-[-15px_15px_25px_-5px_rgba(0,0,0,0.4)] flex flex-col cursor-pointer h-[170px]'
+            className='group bg-white border border-gray-200 overflow-hidden flex flex-col cursor-pointer h-[170px] hover:border-gray-400 transition-colors relative'
             onClick={() => setSelectedProject(project)}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{
-              duration: 0.7,
-              ease: 'easeInOut',
-            }}
           >
             {/* Image/Video */}
             <div className='w-full h-full overflow-hidden bg-gray-100'>
@@ -44,6 +38,16 @@ function Portfolio() {
                   className='w-full h-full object-cover'
                 />
               )}
+            </div>
+            {/* Skills overlay on hover */}
+            <div className='absolute bottom-0 left-0 right-0 bg-black/80 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity'>
+              <div className='flex flex-wrap gap-2 text-xs'>
+                {project.skillsArray.map((skill, index) => (
+                  <span key={index} className='px-2 py-0.5 bg-white/20 rounded'>
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}

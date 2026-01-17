@@ -1,44 +1,29 @@
 function Footer() {
   return (
-    <footer className='bg-[#212121]'>
+    <footer className='bg-black'>
       <div className='max-w-[600px] mx-auto w-full px-4'>
-        <section className='pt-[3%] pb-0 flex justify-center gap-5'>
+        <section className='pt-8 pb-4 flex justify-center gap-6'>
           <a
-            className='group text-white no-underline flex items-center'
+            className='text-white no-underline text-sm hover:text-gray-300 transition-colors'
             href='#resume'
           >
-            RESUME
-            <img
-              className='h-[1em] ml-[5px] transition-transform duration-100 group-hover:scale-[2]'
-              src='images/arrow.png'
-              alt='Arrow'
-            />
+            Resume
           </a>
           <a
-            className='group text-white no-underline flex items-center'
+            className='text-white no-underline text-sm hover:text-gray-300 transition-colors'
             href='#projects'
           >
-            PROJECTS
-            <img
-              className='h-[1em] ml-[5px] transition-transform duration-100 group-hover:scale-[2]'
-              src='images/arrow.png'
-              alt='Arrow'
-            />
+            Projects
           </a>
           <a
-            className='group text-white no-underline flex items-center'
+            className='text-white no-underline text-sm hover:text-gray-300 transition-colors'
             href='#contact'
           >
-            CONTACT
-            <img
-              className='h-[1em] ml-[5px] transition-transform duration-100 group-hover:scale-[2]'
-              src='images/arrow.png'
-              alt='Arrow'
-            />
+            Contact
           </a>
         </section>
 
-        <div className='text-center text-white py-[2%] text-[10px]'>
+        <div className='text-center text-gray-400 py-6 text-xs'>
           Made in 2024 by Anthony Moon
         </div>
       </div>

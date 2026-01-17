@@ -8,18 +8,18 @@ import WorkExperience from './WorkExperience';
 
 function Home() {
   return (
-    <main className='flex flex-col gap-24 py-30'>
+    <main className='flex flex-col gap-16 py-20'>
       {/* ABOUT */}
       <AnimatedSection id='about' className='flex flex-col scroll-mt-6'>
         <div className='max-w-[600px] mx-auto w-full px-4'>
           {/* Name */}
-          <h1 className='text-[35px] text-black leading-none mb-2'>
+          <h1 className='text-4xl text-black leading-none mb-3'>
             Anthony
             <br />
             Moon
           </h1>
 
-          <p className='text-[15px] text-gray-600'>
+          <p className='text-base text-gray-600 leading-relaxed'>
             Graduated in 2024 from Chapman University and currently a full-stack
             developer at InBody. I build clean, user-focused applications, with
             my most recent project surpassing 50K downloads last year. Explore

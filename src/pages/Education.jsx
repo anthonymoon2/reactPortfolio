@@ -3,7 +3,7 @@ import React from 'react';
 function Education() {
   return (
     <div className='max-w-[600px] mx-auto w-full px-4'>
-      <h2 className='text-[16px] font-medium mb-3 dark:text-white'>
+      <h2 className='text-base font-normal mb-4 dark:text-white'>
         Education
       </h2>
       <div className='space-y-4'>
