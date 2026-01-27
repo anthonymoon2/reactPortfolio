@@ -8,7 +8,7 @@ function ProfessionalWork() {
       title: 'InBody USA',
       image: 'images/inbodyusa.png',
       description: 'Migrated $50M WordPress site to Next.js on GCP, boosting performance scores from 40s to 90s. Built AI chatbot increasing engagement 500%. Automated deployments with CI/CD via Cloud Build.',
-      skills: ['Next.js', 'GCP', 'AI/ML', 'CI/CD'],
+      skills: [],
       demoLink: 'https://inbodyusa.com',
       demoText: 'Visit Website',
       sourceCodeLink: null
