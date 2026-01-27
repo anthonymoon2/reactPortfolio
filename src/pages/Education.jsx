@@ -2,8 +2,8 @@ import React from 'react';
 
 function Education() {
   return (
-    <div className='max-w-[600px] mx-auto w-full px-4'>
-      <h2 className='text-base font-normal mb-4 dark:text-white'>
+    <div className='max-w-[800px] mx-auto w-full px-4'>
+      <h2 className='text-lg font-semibold mb-4 text-primary'>
         Education
       </h2>
       <div className='space-y-4'>
@@ -15,16 +15,16 @@ function Education() {
               alt='Chapman Logo'
             />
             <div>
-              <div className='text-base text-gray-900 mb-0.5'>
+              <div className='text-lg text-primary mb-0.5'>
                 Chapman University
               </div>
-              <div className='text-sm text-gray-600'>
+              <div className='text-base text-primary/70'>
                 Fowler School of Engineering · Argyros College of Business &
                 Economics
               </div>
             </div>
           </div>
-          <div className='text-sm text-gray-600 whitespace-nowrap'>
+          <div className='text-base text-primary/70 whitespace-nowrap'>
             Graduation: 2024
           </div>
         </div>

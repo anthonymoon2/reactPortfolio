@@ -12,9 +12,9 @@ const skills = [
   { name: 'Vite', image: '../images/vite.png' },
   { name: 'React', image: '../images/react.webp' },
   { name: 'Docker', image: '../images/docker.webp' },
-  { name: 'VSCode', image: '../images/vscode.webp' },
   { name: 'Git', image: '../images/git.webp' },
   { name: 'Github', image: '../images/github.webp' },
+  { name: 'GCP', image: '../images/gcp.png' },
   { name: 'SQL', image: '../images/sql.webp' },
   { name: 'Flask', image: '../images/flask.png' },
   { name: 'Figma', image: '../images/figma.png' },
@@ -24,18 +24,23 @@ const skills = [
 
 function Skills() {
   return (
-    <div className='max-w-[600px] mx-auto w-full px-4'>
-      <h2 className='text-base font-normal mb-4 dark:text-white'>Skills</h2>
+    <div className='max-w-[800px] mx-auto w-full px-4'>
+      <h2 className='text-lg font-semibold mb-4 text-primary'>Skills</h2>
       <div className='grid grid-cols-3 gap-x-4 gap-y-4 max-[768px]:grid-cols-2 max-[576px]:grid-cols-1'>
-        {skills.map((skill, index) => (
-          <div
-            className='flex items-center gap-2 text-base text-gray-700 dark:text-gray-300'
-            key={index}
-          >
-            <img className='h-5 w-5' src={skill.image} alt={skill.name} />
-            <span>{skill.name}</span>
-          </div>
-        ))}
+        {skills.map((skill, index) => {
+          const columnIndex = index % 3;
+          const justifyClass = columnIndex === 0 ? 'justify-start' : columnIndex === 2 ? 'justify-end' : 'justify-center';
+          
+          return (
+            <div
+              className={`flex items-center ${justifyClass} gap-2 text-lg text-primary`}
+              key={index}
+            >
+              <img className='h-5 w-5' src={skill.image} alt={skill.name} />
+              <span>{skill.name}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

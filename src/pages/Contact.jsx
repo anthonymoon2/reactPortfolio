@@ -18,22 +18,21 @@ function Contact() {
   }, []);
 
   return (
-    <div className='max-w-[600px] mx-auto w-full px-4'>
-      <h2 className='text-base font-normal mb-4 dark:text-white'>Contact</h2>
+    <div className='max-w-[800px] mx-auto w-full px-4'>
+      <h2 className='text-lg font-semibold mb-6 text-primary'>Contact</h2>
 
-      <div className='p-[30px]'>
-        <div className='text-[15px] mb-[30px]'>
-          Thank you for taking the time to look at my portfolio. <br></br>
-          <br></br>
-          Email: anthonymoon2@gmail.com <br></br>
-          Cell: (949) 413 3700
+      <div className='flex flex-col gap-8'>
+        <div className='text-base text-primary leading-relaxed'>
+          <p className='mb-4'>Thank you for taking the time to look at my portfolio.</p>
+          <p className='mb-2'>Email: anthonymoon2@gmail.com</p>
+          <p>Cell: (949) 413 3700</p>
         </div>
-        <div className='text-right'>
-          <div className='text-[14px] text-[lightslategrey]'>
+        <div className='flex flex-col items-end'>
+          <div className='text-sm text-primary/60 mb-1'>
             Anthony's Current Time
           </div>
-          <div className='text-[30px]'>{time}</div>
-          <div className='text-[10px] text-[lightslategrey] pl-[50px]'>
+          <div className='text-3xl text-primary mb-1'>{time}</div>
+          <div className='text-xs text-primary/60'>
             Time in California (PST)
           </div>
         </div>

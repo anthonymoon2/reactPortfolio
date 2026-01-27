@@ -4,7 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        rammetto: ['Rammetto One', 'sans-serif'],
+        epilogue: ['Epilogue', 'Epilogue Placeholder', 'sans-serif'],
+      },
+      colors: {
+        primary: '#6b7a87',
+        background: '#f4f4f3',
       },
       keyframes: {
         cursor: {

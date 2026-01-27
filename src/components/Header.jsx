@@ -12,46 +12,31 @@ function Header() {
   }, []);
 
   const linkBase =
-    "relative text-black no-underline after:content-[''] after:absolute after:bg-black after:h-[1px] after:left-0 after:-bottom-[4px] after:transition-all after:duration-200 after:w-0 hover:after:w-full";
+    "relative text-primary no-underline transition-opacity hover:opacity-70";
 
   return (
-    <header>
-      <nav className="flex justify-between items-center pt-8 text-2xl font-['Outfit',sans-serif] max-w-[600px] mx-auto w-full px-4">
-        <a href='#about' className={linkBase}>
-          {' '}
-          AM{' '}
+    <header className='border-b border-primary/20'>
+      <nav className="flex justify-between items-center py-6 max-w-[800px] mx-auto w-full px-4">
+        <a href='#about' className='text-primary text-lg font-light no-underline hover:opacity-70 transition-opacity'>
+          Anthony Moon
         </a>
 
         <div className='flex gap-6 text-base'>
           <a
-            href='#about'
-            className={`${linkBase} ${
-              activeHash === '#about' ? 'text-gray-600' : ''
-            }`}
-          >
-            About
-          </a>
-          <a
-            href='#resume'
-            className={`${linkBase} ${
-              activeHash === '#resume' ? 'text-[#8c8c73]' : ''
-            }`}
-          >
-            Resume
-          </a>
-          <a
             href='#projects'
-            className={`${linkBase} ${
-              activeHash === '#projects' ? 'text-[#8c8c73]' : ''
-            }`}
+            className={linkBase}
           >
             Projects
           </a>
           <a
+            href='#work'
+            className={linkBase}
+          >
+            Work
+          </a>
+          <a
             href='#contact'
-            className={`${linkBase} ${
-              activeHash === '#contact' ? 'text-[#8c8c73]' : ''
-            }`}
+            className={linkBase}
           >
             Contact
           </a>
